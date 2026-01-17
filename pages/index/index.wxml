@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="header">
+    <text class="title">八字测算</text>
+    <text class="subtitle">输入出生信息，生成基础排盘摘要</text>
+  </view>
+
+  <view class="card">
+    <view class="field">
+      <text class="label">姓名</text>
+      <input class="input" placeholder="请输入姓名" value="{{name}}" bindinput="onNameChange" />
+    </view>
+
+    <view class="field">
+      <text class="label">性别</text>
+      <picker class="picker" mode="selector" range="{{genders}}" value="{{genderIndex}}" bindchange="onGenderChange">
+        <view class="picker-value">{{genders[genderIndex]}}</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="label">出生日期</text>
+      <picker class="picker" mode="date" value="{{birthDate}}" bindchange="onDateChange">
+        <view class="picker-value">{{birthDate}}</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <text class="label">出生时间</text>
+      <picker class="picker" mode="time" value="{{birthTime}}" bindchange="onTimeChange">
+        <view class="picker-value">{{birthTime}}</view>
+      </picker>
+    </view>
+
+    <button class="primary" bindtap="onGenerate">生成排盘摘要</button>
+  </view>
+
+  <view class="result">
+    <text class="result-title">排盘摘要</text>
+    <view class="result-card">
+      <text class="result-text">{{summary}}</text>
+    </view>
+  </view>
+</view>
